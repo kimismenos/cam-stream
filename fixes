@@ -1,0 +1,85 @@
+This happens when you run your Flask application in debug mode and is caused by the reloader that `werkzeug` uses to reload the application every time you make changes to the code. After the application starts the main thread is 
+
+There are several ways to bypass this:
+Debug mode is enabled by either setting the env variable `FLASK_ENV="development"`
+
+
+# Run application 
+if __name__ == '__main__':
+    # If you run the app with: python app.py
+	app.run(app.run(debug=True, use_reloader=False)
+
+    # If you run the app with: FLASK_APP="app.py" FLASK_ENV="development" flask run
+	# app.run(use_reloader=False)
+
+
+# List process hierarchy
+ps f
+pstree <username>
+pstree <pid> 
+
+
+# Log access to /dev/video0
+watch -n 0,5 "sudo fuser /dev/video0"
+
+
+# https://stackoverflow.com/questions/25504149/why-does-running-the-flask-dev-server-run-itself-twice/25504196
+# Initialize Camera only inside child process if run in debug mode
+if os.environ.get('WERKZEUG_RUN_MAIN') or Flask.debug is False:
+	init_cam(args.device, args.width, args.height)
+
+
+unsetenv()
+server = os.environ.get('MY_CAT_STREAMS', 'default-value')
+
+
+__loader__ = [
+    '__class__',
+    '__delattr__',
+    '__dict__',
+    '__dir__',
+    '__doc__',
+    '__eq__',
+    '__format__',
+    '__ge__',
+    '__getattribute__',
+    '__gt__',
+    '__hash__',
+    '__init__',
+    '__init_subclass__',
+    '__le__',
+    '__lt__',
+    '__module__',
+    '__ne__',
+    '__new__',
+    '__reduce__',
+    '__reduce_ex__',
+    '__repr__',
+    '__setattr__',
+    '__sizeof__',
+    '__str__',
+    '__subclasshook__',
+    '__weakref__',
+    '_cache_bytecode',
+    'contents',
+    'create_module',
+    'exec_module',
+    'get_code',
+    'get_data',
+    'get_filename',
+    'get_resource_reader',
+    'get_source',
+    'is_package',
+    'is_resource',
+    'load_module',
+    'name',
+    'open_resource',
+    'path',
+    'path_mtime',
+    'path_stats',
+    'resource_path',
+    'set_data',
+    'source_to_code'
+]
+
+
